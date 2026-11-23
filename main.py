@@ -111,6 +111,8 @@ def delete_post(post_id: int, db: Annotated[Session, Depends(get_db)]):
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Post Not Found"
         )
+    db.delete(post)
+    db.commit()
 
 @app.get("/users/{user_id}/posts", include_in_schema=False, name="user_posts")
 def user_posts_page(
