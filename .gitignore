@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 blog.db
+commands.txt
 
 # Virtual environments
 .venv
